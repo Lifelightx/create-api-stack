@@ -1,0 +1,22 @@
+{
+  "name": "create-api-stack",
+  "version": "1.0.0",
+  "description": "",
+  "bin": {
+    "create-api-stack":"./bin/index.js"
+  },
+  "scripts": {
+    "dev":"node ./bin/index.js"
+  },
+  "keywords": [],
+  "author": "life",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "chalk": "^5.6.2",
+    "execa": "^9.6.1",
+    "fs-extra": "^11.3.4",
+    "inquirer": "^13.4.1",
+    "ora": "^9.3.0"
+  }
+}

@@ -4,3 +4,8 @@ package-lock.json
 .DS_Store
 *.log
 tests/
+myapp
+testing
+.git
+.gitignore
+npm-debug.log

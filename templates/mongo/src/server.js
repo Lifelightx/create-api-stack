@@ -9,8 +9,8 @@ const NODE_ENV = process.env.NODE_ENV || "development";
 
 const server = app.listen(PORT, () => {
   console.log(
-    chalk.yellow.bold(
-      `🚀 Server running in ${NODE_ENV} mode on port ${PORT}`
+    chalk.green.bold(
+      `Server running in ${NODE_ENV} mode on port ${PORT}`
     )
   );
 });

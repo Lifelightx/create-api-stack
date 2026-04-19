@@ -1,6 +1,6 @@
 # API Project
 
-Generated with [create-api-stack](https://github.com/life/create-api-stack)
+Generated with [create-serverkit](https://github.com/life/create-serverkit)
 
 ## Getting Started
 

@@ -1,16 +1,16 @@
 {
-  "name": "create-api-stack",
+  "name": "create-serverkit",
   "version": "1.0.0",
   "description": "",
   "bin": {
-    "create-api-stack":"./bin/index.js"
+    "create-serverkit":"./bin/index.js"
   },
   "scripts": {
     "dev":"node ./bin/index.js"
   },
   "keywords": [],
   "author": "life",
-  "license": "ISC",
+  "license": "MIT",
   "type": "module",
   "dependencies": {
     "chalk": "^5.6.2",

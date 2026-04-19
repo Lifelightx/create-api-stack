@@ -1,12 +1,11 @@
 <div align="center">
-  <img src="./assets/hero.png" alt="Create API Stack Logo" width="600px" style="border-radius: 10px; margin-bottom: 20px;">
 
-  # Create API Stack 🚀
+  # Create ServerKit 🚀
 
   **The fastest way to scaffold a robust, production-ready backend API.**
 
-  [![NPM version](https://img.shields.io/npm/v/create-api-stack.svg?style=flat-square)](https://www.npmjs.com/package/create-api-stack)
-  [![License](https://img.shields.io/badge/license-ISC-blue.svg?style=flat-square)](LICENSE)
+  [![NPM version](https://img.shields.io/npm/v/create-serverkit.svg?style=flat-square)](https://www.npmjs.com/package/create-serverkit)
+  [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](LICENSE)
   [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
   ---
@@ -26,18 +25,18 @@
 
 ## 🚀 Installation
 
-You can run `create-api-stack` using `npx` without installing it globally:
+You can run `create-serverkit` using `npx` without installing it globally:
 
 ```bash
-npx create-api-stack <project-name>
+npx create-serverkit <project-name>
 ```
 
 Or install it globally:
 
 ```bash
-npm install -g create-api-stack
+npm install -g create-serverkit
 # Then run
-create-api-stack my-cool-project
+create-serverkit my-cool-project
 ```
 
 ## 🛠️ Quick Start
@@ -45,7 +44,7 @@ create-api-stack my-cool-project
 Starting a new project is as easy as answering a few questions:
 
 ```bash
-npx create-api-stack my-api
+npx create-serverkit my-api
 ```
 
 ### Interactive Prompts
@@ -81,8 +80,8 @@ If you'd like to contribute or run the tool locally for development:
 
 1.  Clone the repository:
     ```bash
-    git clone https://github.com/your-username/create-api-stack.git
-    cd create-api-stack
+    git clone https://github.com/Lifelightx/create-serverkit.git
+    cd create-serverkit
     ```
 2.  Install dependencies:
     ```bash
@@ -103,10 +102,10 @@ If you'd like to contribute or run the tool locally for development:
 
 ## 📄 License
 
-This project is licensed under the **ISC License**. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
 
 ---
 
 <div align="center">
-  Built with ❤️ by [Lifelightx](https://github.com/Lifelightx)
+  Built with ❤️ by <a href="https://github.com/Lifelightx">Lifelightx</a>
 </div>

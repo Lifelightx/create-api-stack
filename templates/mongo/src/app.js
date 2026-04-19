@@ -3,13 +3,13 @@ import helmet from "helmet";
 import cors from "cors";
 import compression from "compression";
 import rateLimit from "express-rate-limit";
-import mongoSanitize from "express-mongo-sanitize";
 import morgan from "morgan";
 import dotenv from "dotenv";
 
 import connectDB from "./config/db.js";
 import authRoutes from "./routes/auth.routes.js";
 import { errorHandler } from "./middleware/error.middleware.js";
+import { setupSwagger } from "./config/swagger.js";
 
 dotenv.config();
 
@@ -17,12 +17,6 @@ const app = express();
 
 // Connect to database
 connectDB();
-
-/**
- * -----------------------------------------
- * Security Middleware
- * -----------------------------------------
- */
 app.use(helmet());
 
 app.use(
@@ -31,7 +25,6 @@ app.use(
     credentials: true
   })
 );
-
 app.use(
   rateLimit({
     windowMs: 15 * 60 * 1000,
@@ -45,36 +38,27 @@ app.use(
   })
 );
 
-app.use(mongoSanitize());
 
-/**
- * -----------------------------------------
- * Performance Middleware
- * -----------------------------------------
- */
 app.use(compression());
 
-/**
- * -----------------------------------------
- * Body Parsers
- * -----------------------------------------
- */
 app.use(express.json({ limit: "10kb" }));
 app.use(express.urlencoded({ extended: true }));
 
-/**
- * -----------------------------------------
- * Logging
- * -----------------------------------------
- */
 if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
 }
 
+// Swagger Documentation
+setupSwagger(app);
+
 /**
- * -----------------------------------------
- * Health Check
- * -----------------------------------------
+ * @swagger
+ * /health:
+ *   get:
+ *     summary: Health check endpoint
+ *     responses:
+ *       200:
+ *         description: Server is healthy
  */
 app.get("/health", (req, res) => {
   res.status(200).json({
@@ -85,18 +69,8 @@ app.get("/health", (req, res) => {
   });
 });
 
-/**
- * -----------------------------------------
- * API Routes
- * -----------------------------------------
- */
 app.use("/api/v1/auth", authRoutes);
 
-/**
- * -----------------------------------------
- * Error Handling
- * -----------------------------------------
- */
 app.use(errorHandler);
 
 export default app;

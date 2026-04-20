@@ -1,14 +1,25 @@
 {
   "name": "create-serverkit",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.1",
+  "description": "CLI to scaffold Express backend projects with auth, DB, and clean structure",
   "bin": {
     "create-serverkit":"./bin/index.js"
   },
   "scripts": {
     "dev":"node ./bin/index.js"
   },
-  "keywords": [],
+  "keywords": [
+    "nodejs",
+    "express",
+    "backend",
+    "boilerplate",
+    "starter",
+    "scaffold",
+    "mongodb",
+    "postgresql",
+    "authentication",
+    "cli"
+  ],
   "author": "life",
   "license": "MIT",
   "type": "module",

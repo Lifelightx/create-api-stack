@@ -1,12 +1,12 @@
 {
   "name": "create-serverkit",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "CLI to scaffold Express backend projects with auth, DB, and clean structure",
   "bin": {
-    "create-serverkit":"./bin/index.js"
+    "create-serverkit": "./bin/index.js"
   },
   "scripts": {
-    "dev":"node ./bin/index.js"
+    "dev": "node ./bin/index.js"
   },
   "keywords": [
     "nodejs",

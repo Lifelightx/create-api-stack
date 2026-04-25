@@ -1,19 +1,26 @@
+// src/prompts.js
 import inquirer from "inquirer";
 
-export async function askQuestions(defaultProjectName = "my-app") {
-  const answers = await inquirer.prompt([
-    {
+export async function askQuestions(passedName) {
+  const questions = [];
+
+  // Only ask for project name if it wasn't passed as a CLI argument
+  if (!passedName) {
+    questions.push({
       type: "input",
       name: "projectName",
       message: "Project name:",
-      default: defaultProjectName,
+      default: "my-app",
       validate: (input) => {
         if (!input.trim()) {
           return "Project name is required";
         }
         return true;
       }
-    },
+    });
+  }
+
+  questions.push(
     {
       type: "rawlist",
       name: "db",
@@ -28,7 +35,7 @@ export async function askQuestions(defaultProjectName = "my-app") {
       type: "confirm",
       name: "docker",
       message: "Include Docker?",
-      default: true
+      default: false
     },
     {
       type: "confirm",
@@ -36,7 +43,14 @@ export async function askQuestions(defaultProjectName = "my-app") {
       message: "Use TypeScript?",
       default: false
     }
-  ]);
+  );
+
+  const answers = await inquirer.prompt(questions);
+
+  // If we didn't ask for the name, add the passed name to the answers object
+  if (!answers.projectName) {
+    answers.projectName = passedName;
+  }
 
   return answers;
 }

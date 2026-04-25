@@ -1,111 +1,112 @@
 <div align="center">
 
-  # Create ServerKit 🚀
+  <h1>🚀 Create ServerKit</h1>
 
-  **The fastest way to scaffold a robust, production-ready backend API.**
+  <p><strong>The fastest way to scaffold a robust, production-ready Express API.</strong></p>
 
-  [![NPM version](https://img.shields.io/npm/v/create-serverkit.svg?style=flat-square)](https://www.npmjs.com/package/create-serverkit)
-  [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](LICENSE)
-  [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+  <p>
+    <a href="https://www.npmjs.com/package/create-serverkit"><img src="https://img.shields.io/npm/v/create-serverkit.svg?style=for-the-badge&color=fbbf24&labelColor=2d3748" alt="NPM version"></a>
+    <a href="https://www.npmjs.com/package/create-serverkit"><img src="https://img.shields.io/npm/dt/create-serverkit.svg?style=for-the-badge&color=3b82f6&labelColor=2d3748" alt="NPM downloads"></a>
+    <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-6366f1?style=for-the-badge&labelColor=2d3748" alt="License"></a>
+  </p>
 
-  ---
-
-  [Features](#-features) • [Installation](#-installation) • [Quick Start](#-quick-start) • [Roadmap](#-roadmap)
+  <p>
+    <a href="#-features">Features</a> •
+    <a href="#-quick-start">Quick Start</a> •
+    <a href="#-project-structure">Structure</a> •
+    <a href="#-roadmap">Roadmap</a>
+  </p>
 
 </div>
 
-## ✨ Features
+---
 
-- **⚡ Instant Scaffolding**: Get a working API in seconds.
-- **🗄️ Database Ready**: Choose between **MongoDB** and **PostgreSQL**.
-- **📦 Docker Support**: Optional Dockerization for consistent environments.
-- **TypeScript First**: Optional (but recommended) TypeScript support for type safety.
-- **🛠️ Production Best Practices**: Pre-configured with `.env`, `.gitignore`, and modular folder architecture.
-- **🔄 Modern Tooling**: Built with **Node.js**, **Inquirer**, and **Chalk** for a delightful CLI experience.
+## 🧐 Why ServerKit?
 
-## 🚀 Installation
+Setting up a new Express project usually involves hours of boilerplate: configuring folders, setting up environment variables, connecting databases, adding middleware, and fixing TypeScript errors.
 
-You can run `create-serverkit` using `npx` without installing it globally:
+**ServerKit** does all of this for you in **under 10 seconds**. It’s not just a folder creator; it’s a pre-configured architecture that follows industry best practices.
 
-```bash
-npx create-serverkit <project-name>
-```
+## ✨ Key Features
 
-Or install it globally:
+- **⚡ Blazing Fast**: Scaffolds your entire project in seconds.
+- **�️ Type Safe**: Choice of **TypeScript** or **Modern JavaScript (ESM)**.
+- **🗄️ Database Choice**: Integrated support for **MongoDB (Mongoose)** and **Postgres (Sequelize)**.
+- **📦 Docker Ready**: One-click Dockerization with `Dockerfile` and `docker-compose`.
+- **🌐 Network Visibility**: Automatically displays your Local and Network IP for easy testing on other devices.
+- **🔒 Production Ready**: Includes security middleware (Helmet, CORS, Rate Limiting) and Graceful Shutdown logic.
+- **🏗️ Organized**: Clean, modular folder structure (MVC Pattern).
 
-```bash
-npm install -g create-serverkit
-# Then run
-create-serverkit my-cool-project
-```
+---
 
-## 🛠️ Quick Start
+## � Quick Start
 
-Starting a new project is as easy as answering a few questions:
+You don't even need to install it. Just run:
 
 ```bash
-npx create-serverkit my-api
+npx create-serverkit my-awesome-api
 ```
 
-### Interactive Prompts
+### Or scaffold in your current folder:
 
-1.  **Project Name**: The name of your folder.
-2.  **Database**: Select `MongoDB` or `PostgreSQL`.
-3.  **Docker**: Choose whether to include a `Dockerfile` and `docker-compose.yml`.
-4.  **TypeScript**: Choose between JavaScript and TypeScript.
+```bash
+npx create-serverkit .
+```
 
-## 📁 Generated Project Structure
+---
 
-The tool generates a clean, modular structure following industry standards:
+## 🛠️ The Experience
+
+When you start your new server, you'll see a beautiful, informative dashboard:
+
+```text
+🚀 Server is ready!
+  - Local:    http://localhost:5000
+  - Network:  http://192.168.1.5:5000
+
+Mode: development
+```
+
+## 📁 Project Structure
 
 ```text
 my-api/
 ├── src/
-│   ├── config/         # Configuration (DB, Passport, etc.)
-│   ├── controllers/    # Request handlers (logic)
-│   ├── middleware/     # Custom middleware (auth, error, logs)
-│   ├── models/         # Database schemas
-│   ├── routes/         # Express routes (v1, v2, etc.)
-│   ├── app.js          # Express app configuration
-│   └── server.js       # Entry point & server listener
-├── .env                # Environment variables
-├── .gitignore          # Git ignore rules
-├── package.json        # Dependencies and scripts
-└── README.md           # Your project documentation
+│   ├── config/         # Database and environment config
+│   ├── controllers/    # Route controllers (Business logic)
+│   ├── middleware/     # Auth, error handling, and logging
+│   ├── models/         # Database schemas/models
+│   ├── routes/         # API Route definitions
+│   ├── app.js          # Express app setup
+│   └── server.js       # Entry point & listener
+├── .env.example        # Environment variable template
+├── .gitignore          # Pre-configured git rules
+├── package.json        # scripts: dev, start, build
+└── README.md           # Your project's documentation
 ```
-
-## 🏗️ Development
-
-If you'd like to contribute or run the tool locally for development:
-
-1.  Clone the repository:
-    ```bash
-    git clone https://github.com/Lifelightx/create-serverkit.git
-    cd create-serverkit
-    ```
-2.  Install dependencies:
-    ```bash
-    npm install
-    ```
-3.  Run in development mode:
-    ```bash
-    npm run dev
-    ```
-
-## 🗺️ Roadmap
-
-- [x] Add Auth integration (JWT) for MongoDB.
-- [ ] Add PostgreSQL full template implementation.
-- [ ] Add Redis caching support.
-- [ ] Support for Fastify framework.
-- [ ] Automated Testing scaffold (Vitest/Jest).
-
-## 📄 License
-
-This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
 
 ---
 
-<div align="center">
+## 🔧 Requirements
+
+- **Node.js**: 16.x or higher
+- **NPM**: 7.x or higher
+
+## 🗺️ Roadmap
+
+- [x] JWT Authentication boilerplate.
+- [x] Full PostgreSQL Support.
+- [x] Network IP visibility on start.
+- [ ] Redis caching integration.
+- [ ] Fastify Framework support.
+- [ ] Automated Testing (Vitest/Jest).
+
+## 📄 License
+
+Distributed under the **MIT License**. See `LICENSE` for more information.
+
+---
+
+<p align="center">
   Built with ❤️ by <a href="https://github.com/Lifelightx">Lifelightx</a>
-</div>
+</p>

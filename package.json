@@ -1,6 +1,6 @@
 {
   "name": "create-serverkit",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "CLI to scaffold Express backend projects with auth, DB, and clean structure",
   "bin": {
     "create-serverkit": "./bin/index.js"

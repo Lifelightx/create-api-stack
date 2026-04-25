@@ -27,6 +27,12 @@ export async function generateProject(name, options) {
     filter: (src) => !src.includes("node_modules")
   });
 
+  if (!options.docker) {
+    await fs.remove(path.join(targetPath, "Dockerfile"));
+    await fs.remove(path.join(targetPath, "docker-compose.yml"));
+    await fs.remove(path.join(targetPath, ".dockerignore"));
+  }
+
   const packageJsonPath = path.join(targetPath, "package.json");
 
   if (await fs.pathExists(packageJsonPath)) {

@@ -1,23 +1,44 @@
-// src/prompts.js
 import inquirer from "inquirer";
+
+// Validate project name helper
+function validateProjectName(input) {
+  const trimmed = input.trim();
+
+  if (!trimmed) {
+    return "Project name is required";
+  }
+
+  if (trimmed === ".") {
+    return true; // Allow current directory
+  }
+
+  // No spaces, no special chars except - and _
+  const validName = /^[a-zA-Z0-9_-]+$/.test(trimmed);
+  if (!validName) {
+    return "Project name can only contain letters, numbers, hyphens and underscores";
+  }
+
+  return true;
+}
 
 export async function askQuestions(passedName) {
   const questions = [];
 
-  // Only ask for project name if it wasn't passed as a CLI argument
+  // Ask name only if not passed via CLI argument
   if (!passedName) {
     questions.push({
       type: "input",
       name: "projectName",
       message: "Project name:",
       default: "my-app",
-      validate: (input) => {
-        if (!input.trim()) {
-          return "Project name is required";
-        }
-        return true;
-      }
+      validate: validateProjectName
     });
+  } else {
+    // Validate the passed CLI argument too
+    const validationResult = validateProjectName(passedName);
+    if (validationResult !== true) {
+      throw new Error(`Invalid project name "${passedName}": ${validationResult}`);
+    }
   }
 
   questions.push(
@@ -47,7 +68,7 @@ export async function askQuestions(passedName) {
 
   const answers = await inquirer.prompt(questions);
 
-  // If we didn't ask for the name, add the passed name to the answers object
+  // Merge passed name into answers
   if (!answers.projectName) {
     answers.projectName = passedName;
   }
